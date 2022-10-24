@@ -7,7 +7,7 @@ class Program
 
     public static void Main()
     {
-        platform = new Android12();
+        platform = new IOS13();
         IAction action = platform.Action;
         ISuperAction superAction = platform.SuperAction;
         IOptions options = platform.Options;
