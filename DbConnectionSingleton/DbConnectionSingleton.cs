@@ -9,7 +9,8 @@ namespace DbConnectionSingleton
             .ConnectionStrings["DefaultConnection"].ConnectionString);
 
         private static volatile DbConnectionSingleton instance;
-        private static object syncRoot = new Object();
+
+        private static Dictionary<int, DbConnectionSingleton> DbConnectionThreadMap = new();
 
         private DbConnectionSingleton()
         {
@@ -19,12 +20,14 @@ namespace DbConnectionSingleton
         {
             get
             {
-                if (instance == null)
+                if (!DbConnectionThreadMap.ContainsKey(Thread.CurrentThread.ManagedThreadId))
                 {
-                    lock (syncRoot)
-                    {
-                        instance ??= new DbConnectionSingleton();
-                    }
+                    instance = new DbConnectionSingleton();
+                    DbConnectionThreadMap.Add(Thread.CurrentThread.ManagedThreadId, instance);
+                }
+                else
+                {
+                    instance = DbConnectionThreadMap[Thread.CurrentThread.ManagedThreadId];
                 }
                 return instance;
             }
