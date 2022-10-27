@@ -8,7 +8,8 @@ namespace DbConnectionSingleton
         private readonly SqlConnection sqlConnection = new SqlConnection(ConfigurationManager
             .ConnectionStrings["DefaultConnection"].ConnectionString);
 
-        private static DbConnectionSingleton instance;
+        private static volatile DbConnectionSingleton instance;
+        private static object syncRoot = new Object();
 
         private DbConnectionSingleton()
         {
@@ -20,7 +21,10 @@ namespace DbConnectionSingleton
             {
                 if (instance == null)
                 {
-                    instance = new DbConnectionSingleton();
+                    lock (syncRoot)
+                    {
+                        instance ??= new DbConnectionSingleton();
+                    }
                 }
                 return instance;
             }
