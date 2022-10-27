@@ -1,4 +1,6 @@
-﻿namespace Singleton
+﻿using System.Net;
+
+namespace Singleton
 {
     public class HttpSingleton
     {
@@ -24,11 +26,15 @@
             return instance;
         }
 
-        public Task<HttpResponseMessage> Get(string baseAdress)
+        public Task<HttpResponseMessage> Get(int id)
         {
-            var httpInstance = GetInstance(baseAdress);
-            var result = httpInstance._httpClient.GetAsync(baseAdress);
-            return result;
+            if (instance != null)
+            {
+                var result = instance._httpClient.GetAsync(_baseAdress + $"/{id}");
+                return result;
+            }
+
+            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.NoContent));
         }
     }
 }
