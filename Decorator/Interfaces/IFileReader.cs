@@ -2,7 +2,7 @@
 {
     public interface IFileReader
     {
-        IStream Read(string filename);
+        ReadingResult Read(string filename);
         void Write(string filename, string outputFilename);
 
         void Encrypt(string filename);
