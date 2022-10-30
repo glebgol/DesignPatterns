@@ -14,37 +14,37 @@ namespace Decorator.FileReaders
             Filename = _reader.Filename;
         }
 
-        public void Archieve(string outputFilename)
+        public virtual void Archieve(string outputFilename)
         {
             reader.Archieve(outputFilename);
         }
 
-        public void Calculate(string outputFilename)
+        public virtual void Calculate(string outputFilename)
         {
             reader.Calculate(outputFilename);
         }
 
-        public void Dearchive(string outputFilename)
+        public virtual void Dearchive(string outputFilename)
         {
             reader.Dearchive(outputFilename);
         }
 
-        public void Decrypt(string outputFilename)
+        public virtual void Decrypt(string outputFilename)
         {
             reader.Decrypt(outputFilename);
         }
 
-        public void Encrypt(string outputFilename)
+        public virtual void Encrypt(string outputFilename)
         {
             reader.Encrypt(outputFilename);
         }
 
-        public ReadingResult Read()
+        public virtual ReadingResult Read()
         {
             return reader.Read();
         }
 
-        public void Write(string outputFilename)
+        public virtual void Write(string outputFilename)
         {
             reader.Write(outputFilename);
         }
