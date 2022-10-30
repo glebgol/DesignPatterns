@@ -1,52 +1,50 @@
 ﻿using Decorator.Interfaces;
 
-namespace Decorator.FileReaders
+namespace Decorator
 {
-    public abstract class Reader : IFileReader
+    public class FileDataSource : IFileReader
     {
-        protected IFileReader reader;
-
         public string Filename { get; }
 
-        public Reader(IFileReader _reader)
+        public FileDataSource(string filename)
         {
-            reader = _reader;
-            Filename = _reader.Filename;
+            Filename = filename;
         }
 
         public void Archieve(string outputFilename)
         {
-            reader.Archieve(outputFilename);
+            Console.WriteLine($"Archieve {outputFilename}");
         }
 
         public void Calculate(string outputFilename)
         {
-            reader.Calculate(outputFilename);
+            Console.WriteLine($"Calculate {outputFilename}");
         }
 
         public void Dearchive(string outputFilename)
         {
-            reader.Dearchive(outputFilename);
+            Console.WriteLine($"Dearchive {outputFilename}");
         }
 
         public void Decrypt(string outputFilename)
         {
-            reader.Decrypt(outputFilename);
+            Console.WriteLine($"Decrypt {outputFilename}");
         }
 
         public void Encrypt(string outputFilename)
         {
-            reader.Encrypt(outputFilename);
+            Console.WriteLine($"Encrypt {outputFilename}");
         }
 
         public ReadingResult Read()
         {
-            return reader.Read();
+            Console.WriteLine($"Read {Filename}");
+            return new ReadingResult();
         }
 
         public void Write(string outputFilename)
         {
-            reader.Write(outputFilename);
+            Console.WriteLine($"Write {outputFilename}");
         }
     }
 }

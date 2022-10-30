@@ -2,15 +2,17 @@
 {
     public interface IFileReader
     {
-        ReadingResult Read(string filename);
-        void Write(string filename, string outputFilename);
+        string Filename { get; }
 
-        void Encrypt(string filename);
-        void Decrypt(string filename);
+        ReadingResult Read();
+        void Write(string outputFilename);
 
-        void Archieve(string filename);
-        void Dearchive(string filename);
+        void Encrypt(string outputFilename);
+        void Decrypt(string outputFilename);
 
-        void Calculate(string filename, string outputFilename);
+        void Archieve(string outputFilename);
+        void Dearchive(string outputFilename);
+
+        void Calculate(string outputFilename);
     }
 }
