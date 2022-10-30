@@ -4,45 +4,38 @@ namespace Decorator
 {
     public class FileDataSource : IFileReader
     {
-        public string Filename { get; }
-
-        public FileDataSource(string filename)
-        {
-            Filename = filename;
-        }
-
-        public void Archieve(string outputFilename)
+        public void Archieve(string filename, string outputFilename)
         {
             Console.WriteLine($"Archieve {outputFilename}");
         }
 
-        public void Calculate(string outputFilename)
+        public void Calculate(string filename, string outputFilename)
         {
             Console.WriteLine($"Calculate {outputFilename}");
         }
 
-        public void Dearchive(string outputFilename)
+        public void Dearchive(string filename, string outputFilename)
         {
             Console.WriteLine($"Dearchive {outputFilename}");
         }
 
-        public void Decrypt(string outputFilename)
+        public void Decrypt(string filename, string outputFilename)
         {
             Console.WriteLine($"Decrypt {outputFilename}");
         }
 
-        public void Encrypt(string outputFilename)
+        public void Encrypt(string filename, string outputFilename)
         {
             Console.WriteLine($"Encrypt {outputFilename}");
         }
 
-        public ReadingResult Read()
+        public ReadingResult Read(string filename)
         {
-            Console.WriteLine($"Read {Filename}");
+            Console.WriteLine($"Read {filename}");
             return new ReadingResult();
         }
 
-        public void Write(string outputFilename)
+        public void Write(string filename, string outputFilename)
         {
             Console.WriteLine($"Write {outputFilename}");
         }

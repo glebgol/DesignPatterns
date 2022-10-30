@@ -11,42 +11,41 @@ namespace Decorator.FileReaders
         public Reader(IFileReader _reader)
         {
             reader = _reader;
-            Filename = _reader.Filename;
         }
 
-        public virtual void Archieve(string outputFilename)
+        public virtual void Archieve(string filename, string outputFilename)
         {
-            reader.Archieve(outputFilename);
+            reader.Archieve(filename, outputFilename);
         }
 
-        public virtual void Calculate(string outputFilename)
+        public virtual void Calculate(string filename, string outputFilename)
         {
-            reader.Calculate(outputFilename);
+            reader.Calculate(filename, outputFilename);
         }
 
-        public virtual void Dearchive(string outputFilename)
+        public virtual void Dearchive(string filename, string outputFilename)
         {
-            reader.Dearchive(outputFilename);
+            reader.Dearchive(filename, outputFilename);
         }
 
-        public virtual void Decrypt(string outputFilename)
+        public virtual void Decrypt(string filename, string outputFilename)
         {
-            reader.Decrypt(outputFilename);
+            reader.Decrypt(filename, outputFilename);
         }
 
-        public virtual void Encrypt(string outputFilename)
+        public virtual void Encrypt(string filename, string outputFilename)
         {
-            reader.Encrypt(outputFilename);
+            reader.Encrypt(filename, outputFilename);
         }
 
-        public virtual ReadingResult Read()
+        public virtual ReadingResult Read(string filename)
         {
-            return reader.Read();
+            return reader.Read(filename);
         }
 
-        public virtual void Write(string outputFilename)
+        public virtual void Write(string filename, string outputFilename)
         {
-            reader.Write(outputFilename);
+            reader.Write(filename, outputFilename);
         }
     }
 }
