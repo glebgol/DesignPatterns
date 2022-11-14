@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Linq;
+using System.Net;
 
 namespace Singleton
 {
@@ -6,35 +7,53 @@ namespace Singleton
     {
         private static HttpSingleton instance;
         private HttpClient _httpClient;
-        private string _baseAdress;
+        private string _baseAdress = "https://localhost:7248/api/products";
 
-        private HttpSingleton(string baseAdress)
+        private static Dictionary<int, HttpSingleton> HttpClientThreadMap = new();
+
+        private HttpSingleton()
         {
-            _baseAdress = baseAdress;
             _httpClient = new HttpClient()
             {
-                BaseAddress = new Uri(baseAdress)
+                BaseAddress = new Uri(_baseAdress)
             };
         }
 
-        public static HttpSingleton GetInstance(string baseAdress)
+        public static HttpSingleton Instance
         {
-            if (instance == null)
+            get
             {
-                instance = new HttpSingleton(baseAdress);
+                var currentThreadId = Environment.CurrentManagedThreadId;
+                if (!HttpClientThreadMap.ContainsKey(currentThreadId))
+                {
+                    instance = new HttpSingleton();
+                    HttpClientThreadMap.Add(currentThreadId, instance);
+                }
+                else
+                {
+                    instance = HttpClientThreadMap[currentThreadId];
+                }
+                return instance;
             }
-            return instance;
         }
 
-        public Task<HttpResponseMessage> Get(int id)
+        public async Task<HttpResponseMessage> Get(int id)
         {
             if (instance != null)
             {
-                var result = instance._httpClient.GetAsync(_baseAdress + $"/{id}");
-                return result;
+                try
+                {
+                    var result = await instance._httpClient.GetAsync(_baseAdress + $"/{id}");
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return new HttpResponseMessage(HttpStatusCode.NoContent);
+                }
             }
 
-            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.NoContent));
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
     }
 }
