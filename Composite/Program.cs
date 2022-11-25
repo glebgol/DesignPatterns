@@ -1,4 +1,5 @@
-﻿using Composite;
+﻿using Composite.Components;
+using Composite.Visitors;
 
 class Program
 {

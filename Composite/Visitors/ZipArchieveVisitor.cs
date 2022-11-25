@@ -1,4 +1,7 @@
-﻿namespace Composite
+﻿using Composite.Components;
+using Composite.Interfaces;
+
+namespace Composite.Visitors
 {
     public class ZipArchieveVisitor : IArchieveVisitor
     {

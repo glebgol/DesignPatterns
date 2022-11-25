@@ -1,4 +1,4 @@
-﻿namespace Composite
+﻿namespace Composite.Interfaces
 {
     public interface IFileComponent
     {

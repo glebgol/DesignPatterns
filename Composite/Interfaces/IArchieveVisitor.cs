@@ -1,4 +1,6 @@
-﻿namespace Composite
+﻿using Composite.Components;
+
+namespace Composite.Interfaces
 {
     public interface IArchieveVisitor
     {
