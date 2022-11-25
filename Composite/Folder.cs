@@ -3,7 +3,7 @@
     public class Folder : IFileComponent
     {
         protected List<IFileComponent> components = new();
-        public string Name { get; }
+        public string Name { get; set; }
 
         public Folder(string name)
         {
@@ -12,6 +12,7 @@
 
         public void Display()
         {
+            Console.WriteLine(Name);
             foreach (var component in components)
             {
                 component.Display();
