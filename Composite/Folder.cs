@@ -28,5 +28,10 @@
         {
             components.Remove(fileComponent);
         }
+
+        public void AcceptArchieving(IArchieveVisitor visitor)
+        {
+            visitor.Archieve(this);
+        }
     }
 }

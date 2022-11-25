@@ -13,5 +13,10 @@
         {
             Console.WriteLine($"File name {Name}");
         }
+
+        public void AcceptArchieving(IArchieveVisitor visitor)
+        {
+            visitor.Archieve(this);
+        }
     }
 }

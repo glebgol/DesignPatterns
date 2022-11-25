@@ -13,9 +13,12 @@ class Program
         folder.AddComponent(new FileComponent("output1.txt"));
         folder.AddComponent(new FileComponent("output2.txt"));
         folder.AddComponent(new FileComponent("output3.txt"));
-
+        folder.AcceptArchieving(new ZipArchieveVisitor());
         fileSystem.AddComponent(folder);
 
-        fileSystem.Display();
+        fileSystem.AcceptArchieving(new ZipArchieveVisitor());
+
+        var file = new FileComponent("output1.txt");
+        file.AcceptArchieving(new ZipArchieveVisitor());
     }
 }
