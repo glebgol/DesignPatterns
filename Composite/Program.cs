@@ -20,6 +20,6 @@ class Program
         fileSystem.AcceptArchieving(new ZipArchieveVisitor());
 
         var file = new FileComponent("output1.txt");
-        file.AcceptArchieving(new ZipArchieveVisitor());
+        file.AcceptArchieving(new RarArchieveVisitor());
     }
 }
