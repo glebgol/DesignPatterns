@@ -1,4 +1,5 @@
 ﻿using Composite.Interfaces;
+using System.Collections;
 
 namespace Composite.Components
 {
@@ -34,6 +35,11 @@ namespace Composite.Components
         public void AcceptArchiving(IArchiveVisitor visitor)
         {
             visitor.Archive(this);
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }
