@@ -4,6 +4,6 @@
     {
         void Display();
 
-        void AcceptArchieving(IArchieveVisitor visitor);
+        void AcceptArchieving(IArchiveVisitor visitor);
     }
 }

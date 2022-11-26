@@ -3,17 +3,17 @@ using Composite.Interfaces;
 
 namespace Composite.Visitors
 {
-    public class RarArchieveVisitor : IArchieveVisitor
+    public class ZipArchiveVisitor : IArchiveVisitor
     {
-        public void Archieve(FileComponent fileComponent)
+        public void Archive(FileComponent fileComponent)
         {
-            Console.WriteLine("Rar..");
+            Console.WriteLine("Zip..");
             Console.WriteLine(fileComponent.Name);
         }
 
-        public void Archieve(Folder folder)
+        public void Archive(Folder folder)
         {
-            Console.WriteLine("Rar..");
+            Console.WriteLine("Zip..");
             Console.WriteLine(folder.Name);
         }
     }

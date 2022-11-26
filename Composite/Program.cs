@@ -1,6 +1,8 @@
 ﻿using Composite.Components;
 using Composite.Visitors;
 
+namespace Composite;
+
 class Program
 {
     public static void Main()
@@ -14,12 +16,12 @@ class Program
         folder.AddComponent(new FileComponent("output1.txt"));
         folder.AddComponent(new FileComponent("output2.txt"));
         folder.AddComponent(new FileComponent("output3.txt"));
-        folder.AcceptArchieving(new ZipArchieveVisitor());
+        folder.AcceptArchieving(new ZipArchiveVisitor());
         fileSystem.AddComponent(folder);
 
-        fileSystem.AcceptArchieving(new ZipArchieveVisitor());
+        fileSystem.AcceptArchieving(new ZipArchiveVisitor());
 
         var file = new FileComponent("output1.txt");
-        file.AcceptArchieving(new RarArchieveVisitor());
+        file.AcceptArchieving(new RarArchiveVisitor());
     }
 }
