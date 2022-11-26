@@ -31,7 +31,7 @@ namespace Composite.Components
             components.Remove(fileComponent);
         }
 
-        public void AcceptArchieving(IArchiveVisitor visitor)
+        public void AcceptArchiving(IArchiveVisitor visitor)
         {
             visitor.Archive(this);
         }

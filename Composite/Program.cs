@@ -16,12 +16,12 @@ class Program
         folder.AddComponent(new FileComponent("output1.txt"));
         folder.AddComponent(new FileComponent("output2.txt"));
         folder.AddComponent(new FileComponent("output3.txt"));
-        folder.AcceptArchieving(new ZipArchiveVisitor());
+        folder.AcceptArchiving(new ZipArchiveVisitor());
         fileSystem.AddComponent(folder);
 
-        fileSystem.AcceptArchieving(new ZipArchiveVisitor());
+        fileSystem.AcceptArchiving(new ZipArchiveVisitor());
 
         var file = new FileComponent("output1.txt");
-        file.AcceptArchieving(new RarArchiveVisitor());
+        file.AcceptArchiving(new RarArchiveVisitor());
     }
 }

@@ -16,7 +16,7 @@ namespace Composite.Components
             Console.WriteLine($"File name {Name}");
         }
 
-        public void AcceptArchieving(IArchiveVisitor visitor)
+        public void AcceptArchiving(IArchiveVisitor visitor)
         {
             visitor.Archive(this);
         }
