@@ -4,6 +4,7 @@
     {
         protected virtual void CollectTheoryInfo()
         {
+            Console.WriteLine("Collect theory info");
         }
 
         protected abstract void CollectPracticeInfo();

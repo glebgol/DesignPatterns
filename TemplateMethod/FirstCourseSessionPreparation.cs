@@ -9,6 +9,7 @@
 
         protected override void CollectTheoryInfo()
         {
+            base.CollectTheoryInfo();
             Console.WriteLine("Open lecture notes.");
         }
 
