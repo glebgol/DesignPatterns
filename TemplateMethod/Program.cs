@@ -8,5 +8,8 @@ class Program
     {
         var sessionPreparator = new FirstCourseSessionPreparation();
         sessionPreparator.PrepareSession();
+
+        var s = new SecondCourseSessionPreparation();
+        s.PrepareSession();
     }
 }
