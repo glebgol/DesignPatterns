@@ -6,10 +6,17 @@ class Program
 {
     public static void Main()
     {
-        var sessionPreparator = new FirstCourseSessionPreparation();
-        sessionPreparator.PrepareSession();
+        var firstCourseSession = new FirstCourseSessionPreparation();
+        firstCourseSession.PrepareSession();
 
-        var s = new SecondCourseSessionPreparation();
-        s.PrepareSession();
+        Console.WriteLine();
+
+        var secondCourseSession = new SecondCourseSessionPreparation();
+        secondCourseSession.PrepareSession();
+
+        Console.WriteLine();
+
+        var thirdCourseSession = new ThirdCourseSessionPreparation();
+        thirdCourseSession.PrepareSession();
     }
 }
