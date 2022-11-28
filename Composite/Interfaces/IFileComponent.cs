@@ -1,8 +1,6 @@
-﻿using System.Collections;
-
-namespace Composite.Interfaces
+﻿namespace Composite.Interfaces
 {
-    public interface IFileComponent : IEnumerable
+    public interface IFileComponent
     {
         void Display();
 

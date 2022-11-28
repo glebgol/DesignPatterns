@@ -18,7 +18,8 @@ class Program
         folder.AddComponent(new FileComponent("output3.txt"));
         folder.AcceptArchiving(new ZipArchiveVisitor());
         fileSystem.AddComponent(folder);
-
+        
+        
         fileSystem.AcceptArchiving(new ZipArchiveVisitor());
 
         var file = new FileComponent("output1.txt");

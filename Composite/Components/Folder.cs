@@ -1,11 +1,10 @@
 ﻿using Composite.Interfaces;
-using System.Collections;
 
 namespace Composite.Components
 {
     public class Folder : IFileComponent
     {
-        protected List<IFileComponent> components = new();
+        public List<IFileComponent> Components { get; private set; } = new();
         public string Name { get; set; }
 
         public Folder(string name)
@@ -16,7 +15,7 @@ namespace Composite.Components
         public void Display()
         {
             Console.WriteLine(Name);
-            foreach (var component in components)
+            foreach (var component in Components)
             {
                 component.Display();
             }
@@ -24,22 +23,17 @@ namespace Composite.Components
 
         public void AddComponent(IFileComponent fileComponent)
         {
-            components.Add(fileComponent);
+            Components.Add(fileComponent);
         }
 
         public void RemoveComponent(IFileComponent fileComponent)
         {
-            components.Remove(fileComponent);
+            Components.Remove(fileComponent);
         }
 
         public void AcceptArchiving(IArchiveVisitor visitor)
         {
             visitor.Archive(this);
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            throw new NotImplementedException();
         }
     }
 }
