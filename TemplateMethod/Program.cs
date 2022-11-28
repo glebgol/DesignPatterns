@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using TemplateMethod;
+
+namespace Composite;
+
+class Program
+{
+    public static void Main()
+    {
+        var sessionPreparator = new FirstCourseSessionPreparation();
+        sessionPreparator.PrepareSession();
+    }
+}
