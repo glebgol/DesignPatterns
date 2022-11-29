@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConnectionSingleton", "Db
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Composite", "Composite\Composite.csproj", "{0D61F64C-37E9-4734-99A5-29E70E594FFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod", "TemplateMethod\TemplateMethod.csproj", "{F9CEE19F-380C-4EE7-8EF4-9E941D4A340F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMethod", "TemplateMethod\TemplateMethod.csproj", "{F9CEE19F-380C-4EE7-8EF4-9E941D4A340F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "Command\Command.csproj", "{417593D1-1D2D-416D-AEF0-4B3E721C42A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy", "Strategy\Strategy.csproj", "{7FEC1C4E-9E31-45D3-A9AF-046BF558DC17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{F9CEE19F-380C-4EE7-8EF4-9E941D4A340F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9CEE19F-380C-4EE7-8EF4-9E941D4A340F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9CEE19F-380C-4EE7-8EF4-9E941D4A340F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{417593D1-1D2D-416D-AEF0-4B3E721C42A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{417593D1-1D2D-416D-AEF0-4B3E721C42A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{417593D1-1D2D-416D-AEF0-4B3E721C42A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{417593D1-1D2D-416D-AEF0-4B3E721C42A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FEC1C4E-9E31-45D3-A9AF-046BF558DC17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FEC1C4E-9E31-45D3-A9AF-046BF558DC17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FEC1C4E-9E31-45D3-A9AF-046BF558DC17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FEC1C4E-9E31-45D3-A9AF-046BF558DC17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
