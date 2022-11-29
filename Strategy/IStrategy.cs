@@ -2,7 +2,6 @@
 {
     public interface IStrategy
     {
-        void Sort();
-        void Find();
+        ICollection<int> Sort(List<int> list);
     }
 }
