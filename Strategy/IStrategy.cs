@@ -2,6 +2,6 @@
 {
     public interface IStrategy
     {
-        ICollection<int> Sort(List<int> list);
+        ICollection<int> Sort(ICollection<int> list);
     }
 }

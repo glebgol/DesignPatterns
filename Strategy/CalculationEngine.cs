@@ -3,10 +3,12 @@
     public class CalculationEngine
     {
         private IStrategy strategy;
+        private ICollection<int> list;
 
-        public CalculationEngine(IStrategy strategy)
+        public CalculationEngine(ICollection<int> list)
         {
-            this.strategy = strategy;
+            this.list = list;
+            strategy = new AscendingSortStrategy();
         }
 
         public void SetStrategy(IStrategy strategy)
@@ -14,10 +16,14 @@
             this.strategy = strategy;
         }
 
-        public void SortAndPrint(List<int> list)
+        public void Sort()
         {
-            var sortedList = strategy.Sort(list);
-            foreach (var item in sortedList)
+            list = strategy.Sort(list);
+        }
+
+        public void Print()
+        {
+            foreach (var item in list)
             {
                 Console.Write(item + " ");
             }

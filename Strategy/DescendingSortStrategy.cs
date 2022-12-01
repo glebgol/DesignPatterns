@@ -2,7 +2,7 @@
 {
     public class DescendingSortStrategy : IStrategy
     {
-        public ICollection<int> Sort(List<int> list)
+        public ICollection<int> Sort(ICollection<int> list)
         {
             return list.OrderByDescending(i => i).ToList();
         }
