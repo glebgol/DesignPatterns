@@ -4,6 +4,11 @@
     {
         private State _state;
 
+        public DbConnection()
+        {
+            SetState(new CloseState(this));
+        }
+
         public void Open()
         {
             _state.Open();
