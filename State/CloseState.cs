@@ -18,7 +18,7 @@
 
         public override void Process(string str)
         {
-            throw new NotImplementedException();
+            throw new CloseStateException("Can't process close DbConnection");
         }
     }
 }
